@@ -63,15 +63,10 @@ if [[ -f "$_root_dir/build_finished_$_target_cpu.log" ]] ; then
   mkdir -p release_asset
   mv -vn ./*.dmg release_asset/ || true
 
-  if [ "$_target_cpu" = "x86_64" ]; then
-    DELTA_ARG="--x86"
-  else
-    DELTA_ARG="--arm"
-  fi
-
-  ./github_prep_sparkle_deltas.sh \
-    $DELTA_ARG "./release_asset/$_file_name" \
-    --out ./release_asset
+  # Sparkle delta generation skipped: this fork only builds x86_64 (not arm64),
+  # so generate_sparkle_deltas.py's get_asset_url(release, 'arm64') asserts.
+  # Additionally, this fork doesn't ship Sparkle EdDSA signing keys, so deltas
+  # would not be consumed by any auto-updater client.
 
   ls -kahl release_asset/
   du -hs release_asset/
