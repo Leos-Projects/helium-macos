@@ -11,6 +11,11 @@ on:
         type: boolean
         description: "Create a release after build is done"
         default: false
+      do-prerelease:
+        required: false
+        type: boolean
+        description: "Publish as a pre-release (default: true)"
+        default: true
 
 permissions:
   contents: write
@@ -71,7 +76,7 @@ jobs:
         with:
           body_path: ./github_release_note.md
           draft: false
-          prerelease: true
+          prerelease: ${{ inputs.do-prerelease }}
           files: |
             ./release_asset/${{ steps.bake.outputs.x64_file_name }}
             ${{ steps.list_deltas.outputs.deltas }}
