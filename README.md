@@ -1,6 +1,6 @@
 # helium-macos
 macOS packaging & development tooling for the
-[Helium Browser](https://github.com/imputnet/helium).
+[Helium Browser](https://github.com/Browser-Projects/helium) — Browser-Projects independent fork.
 
 ## Building and development
 macOS is our primary development platform, so it's the recommended environment
@@ -10,7 +10,7 @@ for developing new Helium features.
 
 ## Contributing
 Before contributing to this repo, please read the guidelines in the main repo's
-[CONTRIBUTING.md](https://github.com/imputnet/helium/blob/main/CONTRIBUTING.md).
+[CONTRIBUTING.md](https://github.com/Browser-Projects/helium/blob/main/CONTRIBUTING.md).
 
 ## Credits
 
